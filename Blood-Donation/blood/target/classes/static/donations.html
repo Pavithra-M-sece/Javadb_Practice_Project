@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Donations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initDonations()">
+<header>
+    <h1>🩸 Manage Donations</h1>
+    <nav>
+        <a href="index.html">🏠 Donors</a>
+        <a href="drives.html">📅 Blood Drives</a>
+        <a href="donations.html" class="active">💉 Donations</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Add Donation</h2>
+    <form id="donationForm" onsubmit="addDonation(event)">
+        <label for="donorSelect">Select Donor:</label>
+        <select id="donorSelect" required></select>
+
+        <label for="driveSelect">Select Blood Drive:</label>
+        <select id="driveSelect" required></select>
+
+        <label for="donationDate">Donation Date:</label>
+        <input type="date" id="donationDate" required>
+
+        <button type="submit" class="btn btn-primary">Add Donation</button>
+    </form>
+
+    <h2>Donation Records</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Donor</th>
+                <th>Blood Drive</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="donationTableBody"></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

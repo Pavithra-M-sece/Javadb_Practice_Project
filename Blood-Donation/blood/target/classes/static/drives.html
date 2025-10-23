@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Blood Drives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="fetchDrives()">
+<header>
+    <h1>📅 Manage Blood Drives</h1>
+    <nav>
+        <a href="index.html">🏠 Donors</a>
+        <a href="drives.html" class="active">📅 Blood Drives</a>
+        <a href="donations.html">💉 Donations</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Add Blood Drive</h2>
+    <form id="driveForm" onsubmit="addDrive(event)">
+        <input type="text" id="driveLocation" placeholder="Location" required>
+        <input type="date" id="driveDate" required>
+        <button type="submit" class="btn btn-primary">Add Drive</button>
+    </form>
+
+    <h2>Upcoming Drives</h2>
+    <table>
+        <thead>
+            <tr><th>ID</th><th>Location</th><th>Date</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="driveTableBody"></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
